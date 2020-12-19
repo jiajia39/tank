@@ -2,6 +2,8 @@ package com.tank;
 
 import java.awt.Frame;
 import java.awt.Graphics;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -14,7 +16,8 @@ public class tankFrame extends Frame {
 		setResizable(false);
 		setVisible(true);
 		setTitle("tankFrame");
-		
+		//键盘监听处理类
+		this.addKeyListener(new MyKeyListenner());
 		
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -33,5 +36,20 @@ public class tankFrame extends Frame {
 		y+=10;
 		
 	}
+	class MyKeyListenner extends KeyAdapter{
+
+		@Override
+		public void keyPressed(KeyEvent e) {//一个键被按下去时调用
+			System.out.println("key press");
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {//一个键被弹起来时调用
+			System.out.println("key releas");
+		}
+		
+	}
+	
+	
 	
 }

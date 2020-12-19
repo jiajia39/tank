@@ -32,8 +32,8 @@ public class tankFrame extends Frame {
 	public void paint(Graphics g) {
 		System.out.println("print");
 		g.fillRect(x, y, 50, 50);//填充一个矩形  前两项是坐标后两项是宽高
-		x+=10;
-		y+=10;
+		x+=20;
+//		y+=10;
 		
 	}
 	class MyKeyListenner extends KeyAdapter{
@@ -41,6 +41,8 @@ public class tankFrame extends Frame {
 		@Override
 		public void keyPressed(KeyEvent e) {//一个键被按下去时调用
 			System.out.println("key press");
+			//x+=100;
+			//repaint();//默认调用paint方法
 		}
 
 		@Override
